@@ -1,0 +1,11 @@
+<h2>Here are your matching search results:</h2>
+
+<% if @students.size < Student.all.size %>
+<% @students.each do |student| %>
+
+    <%= render partial: 'student', locals: {student: student} %>
+
+  <% end %>
+  <% else %>
+    <h3>We did not find any matches for your search. Please try again.</h3>
+<% end %>
